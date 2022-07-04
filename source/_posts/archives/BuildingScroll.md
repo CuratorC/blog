@@ -249,6 +249,77 @@ post_meta:
     label: false
 ```
 
+#### 文章过期提醒
+
+```yaml
+noticeOutdate:
+  enable: true
+  style: simple # style: simple/flat
+  limit_day: 365 # When will it be shown
+  position: top # position: top/bottom
+  message_prev: 这篇上古文章出土于
+  message_next: 天前，食用前请核对当前环境是否匹配。
+```
+
+#### 头像配置
+
+```yaml
+avatar:
+  img: /image/avatar.jpg
+  effect: false
+```
+
+#### 侧边栏配置
+
+```yaml
+aside:
+  ...
+  card_author:
+    ...
+    button:
+    ...
+    link: https://github.com/CuratorC
+  card_announcement:
+    ...
+    content: 任何需要请邮箱联系：mail@curatorc.com
+```
+
+#### 页脚配置
+
+```yaml
+footer:
+  owner:
+    enable: true
+    since: 2020
+  custom_text: 愿你始终如一<br/><a href="https://beian.miit.gov.cn"><span>备案号：晋ICP备18007174号</span></a>
+  copyright: false # Copyright of theme and framework
+```
+
+#### 网站运营日期
+
+```yaml
+runtimeshow:
+  enable: true
+  publish_date: 2020/07/18
+```
+
+#### 允许复制
+
+```yaml
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 9999
+```
+
+#### 绘图
+
+```yaml
+mermaid:
+  enable: true
+```
+
 ### 附加页面
 
 #### 标签页
