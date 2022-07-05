@@ -34,12 +34,14 @@ swiper_cover:
 curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 ```
 
-* 修改为国内镜像（清华大学）
+[//]: # (* 修改为国内镜像（清华大学）)
 
-```bash
-BASH
-sed -i "s/deb.nodesource.com\/node/mirrors.tuna.tsinghua.edu.cn\/nodesource\/deb/g" /etc/apt/sources.list.d/nodesource.list
-```
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (sed -i "s/deb.nodesource.com\/node/mirrors.tuna.tsinghua.edu.cn\/nodesource\/deb/g" /etc/apt/sources.list.d/nodesource.list)
+
+[//]: # (```)
 
 * 更新源
 
@@ -320,6 +322,85 @@ mermaid:
   enable: true
 ```
 
+#### 评论
+
+遵循 [gitalk](https://github.com/gitalk/gitalk/blob/master/readme-cn.md) 的指示去获取你的 github Oauth 应用的 client id 和 secret 值。以及查看它的相关配置説明。
+
+```yaml
+comments:
+  # Up to two comments system, the first will be shown as default
+  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42
+  use: Gitalk
+  text: false # Display the comment name next to the button
+  # lazyload: The comment system will be load when comment element enters the browser's viewport.
+  # If you set it to true, the comment count will be invalid
+  lazyload: false
+  count: false # Display comment count in post's top_img
+  card_post_count: false # Display comment count in Home Page
+  ...
+# gitalk
+# https://github.com/gitalk/gitalk
+gitalk:
+  client_id: {{client_id}}
+  client_secret: {{client_secret}}
+  repo: {{client_repo}}
+  owner: CuratorC
+  admin: ['CuratorC']
+  option:
+```
+
+#### 本地搜索
+
+安装插件
+
+```bash
+npm install hexo-generator-search --save
+```
+
+修改配置
+
+```yaml
+local_search:
+  enable: true
+  preload: true
+```
+
+#### 谷歌统计
+
+* 登录谷歌分析的官方网站
+* 找到你的谷歌分析的跟踪 ID
+
+```yaml
+# Google Analytics
+# https://analytics.google.com/analytics/web/
+google_analytics: XX-XXXXXXXXXX
+```
+
+#### 彩带背景
+
+```yaml
+# canvas_ribbon (靜止彩帶背景)
+# See: https://github.com/hustcc/ribbon.js
+canvas_ribbon:
+  enable: true
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: true
+  mobile: true
+```
+
+#### 页面美化
+
+```yaml
+# 美化页面显示
+beautify:
+  enable: true
+  field: site # site/post
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: "#F47466"
+```
+
 ### 附加页面
 
 #### 标签页
@@ -420,6 +501,9 @@ swiper_desc:
 
 [comment]: <> (文章展示优先级)
 swiper_cover:
+
+[comment]: <> (数学公式)
+katex: false
 
 ---
 ```

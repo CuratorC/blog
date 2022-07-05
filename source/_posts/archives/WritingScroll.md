@@ -1,6 +1,6 @@
 ---
 title: 写作宝典
-description: 新文章，从新建文件起到静态托管的全流程
+description: 编写一篇新文章，从新建文件起到静态托管的全流程
 
 [comment]: <> (文章展示优先级)
 sticky: 5
@@ -31,10 +31,10 @@ swiper_cover:
 hexo new butt {{title}} -p {{folder}}/{{file_name}}
 ```
 
-| 名称 | 用法 |
-| ----- | ----- |
-| `{{title}}` | 标题 |
-| `{{folder}}` | 文件夹 |
+| 名称              | 用法  |
+|-----------------|-----|
+| `{{title}}`     | 标题  |
+| `{{folder}}`    | 文件夹 |
 | `{{file_name}}` | 文件名 |
 
 例如
@@ -42,6 +42,13 @@ hexo new butt {{title}} -p {{folder}}/{{file_name}}
 ```bash
 hexo new butt "写作宝典" -p archives/WritingScroll
 ```
+
+### 运行本地环境进行预览
+
+```bash
+hexo clean && hexo g && hexo s
+```
+
 
 ## 美化
 
