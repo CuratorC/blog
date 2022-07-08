@@ -2,17 +2,14 @@
 title: 建站宝典
 description: Ubuntu, Laravel
 keywords: Ubuntu, Laravel
-top_img: /images/php/PhpCover.png
-cover: /images/php/PhpCover.png
+top_img: /images/archive/books.jpg
+cover: /images/archive/books.jpg
 tags:
-  - 1111
+  - 项目结构
 categories:
-  - Golang
-date: 2022-07-03 17:03:43
-updated: 2022-07-03 17:03:43
-swiper_index:
-swiper_desc:
-swiper_cover:
+  - Archives
+date: 2022-07-03 17:03:43 
+updated: 2022-07-06 15:06:44 
 ---
 
 ## 建站思路
@@ -20,13 +17,19 @@ swiper_cover:
 * 参考[写作宝典](/archives/WritingScroll)本地编写文章
 * 包含全局搜索等功能
 * 上传至`github`平台
-* 自动触发脚本部署至`OSS`
+* 使用脚本部署至`OSS`
 
 ## 准备环境
 
 ### Node.js
 
-> 本人采用`Ubuntu20.04`，因此仅以此为例编写文档。其他系统请自行搜索`Node.js & npm`环境部署方法。
+{% note blue 'fa-brands fa-instagram' %}
+本人采用`Ubuntu20.04`，因此仅以此为例编写文档。其他系统请自行搜索`Node.js & npm`环境部署方法。
+{% endnote %}
+
+{% note orange 'fa-solid fa-gamepad' %}
+因涉及到 shell 脚本，建议有条件的 coder 尽量选择与笔者类似的环境
+{% endnote %}
 
 * 添加源
 
@@ -146,7 +149,7 @@ menu:
     # Unity: /categories/Unity/
   三方服务: /categories/ThreeParty || fas fa-dice-three
   项目||fas fa-umbrella-beach:
-    ggt-coder: /categories/ggt-coder/
+    canned-coder: /categories/canned-coder/
     sentry-white: /categories/sentry-white/
 ```
 
@@ -224,7 +227,7 @@ category_per_img:
   ThreeParty: /images/three-party/three-party-top-image.jpg
 #  C#: /client/cs/
 #  Unity: /client/unity/
-#  ggt-coder: /projects/ggt-coder/
+#  canned-coder: /projects/canned-coder/
 #  ggt-sentry-white: /projects/ggt-sentry-white/
 
 ```
@@ -401,6 +404,123 @@ beautify:
   title-prefix-icon-color: "#F47466"
 ```
 
+#### 字体设置
+
+```yaml
+# Global font settings
+# Don't modify the following settings unless you know how they work (非必要不要修改)
+font:
+  global-font-size:
+  code-font-size:
+  font-family: PingFang SC
+  code-font-family: Cascadia Code PL
+
+# Font settings for the site title and site subtitle
+# 左上角網站名字 主頁居中網站名字
+blog_title_font:
+  font_link: https://fonts.googleapis.com/css?family=Titillium+Web&display=swap
+  font-family: PingFang SC
+```
+
+#### 页面加载动画
+
+```yaml
+# 加载动画 Loading Animation
+preloader: true
+```
+
+#### 字数统计
+
+```bash
+npm install hexo-wordcount --save
+```
+
+```yaml
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+```
+
+#### 大图查看
+
+```yaml
+medium_zoom: true
+```
+
+#### 预加载
+
+```yaml
+# https://instant.page/
+# prefetch (预加载)
+instantpage: true
+```
+
+#### github 统计板
+
+* 安装插件
+
+```bash
+npm i hexo-githubcalendar --save
+```
+
+* 在站点配置文件中添加
+
+```yaml _config.yml
+githubcalendar:
+  enable: true
+  priority: 3
+  enable_page: /
+  user: {{github 用户名}}
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  githubcalendar_html: '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="height:100%;display: flex;align-items: center;justify-content: center;"><svg style="height:50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>'
+  pc_minheight: 248px
+  mobile_minheight: 0px
+  color: "['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f']"
+  api: https://python-github-calendar-api.vercel.app/api
+  # api: https://python-gitee-calendar-api.vercel.app/api
+  calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js
+  plus_style: ""
+```
+
+#### Banner 图
+
+* 安装插件
+
+```bash
+npm i hexo-butterfly-swiper --save
+```
+
+* 在主题配置文件中添加
+
+```yaml _config.butterfly.yml
+# hexo-butterfly-swiper
+# see https://akilar.top/posts/8e1264d1/
+swiper:
+  enable: true # 开关
+  priority: 5 #过滤器优先权
+  enable_page: / # 应用页面
+  exclude: #屏蔽页面
+  # - /posts/
+  # - /about/
+  timemode: date #date/updated
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  error_img: /img/default.png #封面图片加载失败的默认封面
+  insertposition: afterbegin
+  default_descr: 再怎么看我也不知道怎么描述它的啦！
+  swiper_css: https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper.min.css #swiper css依赖
+  swiper_js: https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper.min.js #swiper js依赖
+  custom_css: https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiperstyle.css # 适配主题样式补丁
+  custom_js: https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper_init.js # swiper初始化方法
+```
+
 ### 附加页面
 
 #### 标签页
@@ -460,50 +580,118 @@ touch scaffolds/butt.md
 
 ```markdown
 ---
-
-[comment]: <> (标题)
 title: {{ title }}
-
-[comment]: <> (编写日期)
 date: {{ date }}
-
-[comment]: <> (更新日期)
 updated: {{ date }}
-
-[comment]: <> (置顶优先级)
-sticky: 5
-
-[comment]: <> (简述)
+sticky: 文章展示优先级，type:integer
 description: {{ description }}
-
-[comment]: <> (SEO 关键字)
 keywords: {{ keywords }}
-
-[comment]: <> (顶图)
 top_img: {{ top_img }}
-
-[comment]: <> (封面)
 cover: {{ cover }}
-
-[comment]: <> (标签)
 tags:
-    - {{ tag }}
-
-[comment]: <> (分类)
-categories:
-    - {{ category }}
-
-[comment]: <> (文章展示优先级)
-swiper_index:
-
-[comment]: <> (文章展示优先级)
-swiper_desc:
-
-[comment]: <> (文章展示优先级)
-swiper_cover:
-
-[comment]: <> (数学公式)
-katex: false
-
+- {{ tag }}
+  categories:
+- {{ category }}
+swiper_index: 置顶轮播图顺序，数字越大越靠前，type:integer
 ---
+```
+
+## 脚本
+
+### 运行本地环境
+
+* 新建文件: local.sh
+
+```bash
+touch local_server.sh
+```
+
+* 写入以下脚本
+
+```shell
+#!/bin/bash
+
+hexo clean
+
+hexo g
+
+hexo s
+```
+
+* 给予运行权限
+
+```bash
+chmod 755 local_server.sh
+```
+
+### 部署至 OSS 服务
+
+
+#### ossutil
+
+* 参考[官方文档](https://help.aliyun.com/document_detail/120075.html)获取`OSS`官方脚本
+
+```bash
+wget https://gosspublic.alicdn.com/ossutil/1.7.13/ossutil64     
+```
+
+* 因为配置文件要包含`OSS`的密钥，不能将其上传至`GIT库`，所以要做好文件忽略与文件模板
+
+```bash
+sed -i '$a ossutil.cfg' .gitignore
+```
+
+* 新建配置文件
+
+```bash
+touch ossutil.cfg.example
+```
+
+* 写入以下配置
+
+```config
+[Credentials]
+language=CH
+endpoint=oss-cn-hangzhou.aliyuncs.com
+accessKeyID={{AccessKey ID}}
+accessKeySecret={{AccessKey Secret}}
+```
+
+* 复制为正式的配置文件，并修改为自己`OSS`的令牌
+
+```bash
+cp ossutil.cfg.example ossutil.cfg
+```
+
+#### 上传脚本
+
+* 新建脚本文件
+
+```bash
+touch upload_oss.sh
+```
+
+* 写入以下配置，并将`{{Bucket Name}}`替换为自己公共读权限的存储库
+
+```shell
+#!/bin/bash
+
+TARGET_BUCKET={{Bucket Name}}
+
+echo "uploading..."
+
+hexo clean
+hexo g
+
+./ossutil64 -c ossutil.cfg rm -rf oss://$TARGET_BUCKET/
+./ossutil64 -c ossutil.cfg cp -rf public/ oss://$TARGET_BUCKET/
+
+echo "done"
+
+```
+
+* 给予运行权限
+
+```bash
+chmod 755 upload_oss.sh
 ```

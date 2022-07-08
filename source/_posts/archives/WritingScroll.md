@@ -1,22 +1,17 @@
 ---
 title: 写作宝典
 description: 编写一篇新文章，从新建文件起到静态托管的全流程
-
-[comment]: <> (文章展示优先级)
 sticky: 5
-
 keywords: Butterfly, Hexo, markdown
-top_img: /images/php/PhpCover.png
-cover: /images/php/PhpCover.png
+top_img: /images/archive/books.jpg
+cover: /images/archive/books.jpg
 tags:
   - markdown
 categories:
-  - archives
+  - Archives
 date: 2022-07-03 16:56:44
-updated: 2022-07-03 16:56:44
-swiper_index:
-swiper_desc:
-swiper_cover:
+updated: 2022-07-06 15:06:44
+swiper_index: 2
 ---
 
 > 仅适用于本博客，若要原封不用的使用，请参考[建站宝典](/archives/BuildingScroll)
@@ -28,7 +23,7 @@ swiper_cover:
 ### 新建文件
 
 ```bash
-hexo new butt {{title}} -p {{folder}}/{{file_name}}
+hexo new butt "{{title}}" -p {{folder}}/{{file_name}}
 ```
 
 | 名称              | 用法  |
@@ -46,15 +41,20 @@ hexo new butt "写作宝典" -p archives/WritingScroll
 ### 运行本地环境进行预览
 
 ```bash
-hexo clean && hexo g && hexo s
+./local_server.sh
 ```
 
+### 部署至 OSS
+
+```bash
+./upload_oss.sh
+```
 
 ## 美化
 
 ### 字体图标
 
-Butterfly支持 [font-awesome v6](https://fontawesome.com/icons?from=io) 图标.
+Butterfly支持 [font-awesome v6](https://fontawesome.com/icons) 图标.
 
 ### 标签外挂
 
@@ -67,7 +67,7 @@ Any content (support inline tags too.io).
 | 名称 | 用法 |
 | ----- | ----- |
 | `{{color}}` | 【可选】顔色 (default / blue / pink / red / purple / orange / green) |
-| `{{icon}}` | 【可选】可配置自定义 icon (只支持 [font-awesome v6](https://fontawesome.com/icons?from=io) 图标, 也可以配置 no-icon ) |
+| `{{icon}}` | 【可选】可配置自定义 icon (只支持 [font-awesome v6](https://fontawesome.com/icons) 图标, 也可以配置 no-icon ) |
 | `{{style}}` | 【可选】可以覆盖配置中的 style（simple/modern/flat/disabled） |
 
 
@@ -147,7 +147,7 @@ Any content (support inline tags too).
 |  | 如果未设置则默认选中第一个 |
 |  | 如果设置为 -1 则默认收起全部 |
 | `{{tab_caption}}` | 选项卡标题 |
-| `{{@icon}}` | 图标，只支持 [font-awesome v6](https://fontawesome.com/icons?from=io) 图标 |
+| `{{@icon}}` | 图标，只支持 [font-awesome v6](https://fontawesome.com/icons) 图标 |
 
 ```markdown  eg:
 {% tabs test 2 %}

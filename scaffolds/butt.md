@@ -2,15 +2,14 @@
 title: {{ title }}
 date: {{ date }}
 updated: {{ date }}
-description: 'Ubuntu, Laravel'
-keywords: 'Ubuntu, Laravel'
-top_img: /images/php/PhpCover.png
-cover: /images/php/PhpCover.png
+sticky: 文章展示优先级，type:integer
+description: {{ description }}
+keywords: {{ keywords }}
+top_img: {{ top_img }}
+cover: {{ cover }}
 tags:
-- 1111
+  - {{ tag }}
 categories:
-- Golang
-swiper_index:
-swiper_desc:
-swiper_cover:
+  - {{ category }} 
+swiper_index: 置顶轮播图顺序，数字越大越靠前，type:integer
 ---

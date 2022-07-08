@@ -1,0 +1,36 @@
+---
+title: Start Golang
+tags:
+  - Golang
+  - 入门
+categories:
+  - Golang
+date: 2021-08-12 16:49:48
+updated: 2022-07-06 17:16:18
+description: 下载并安装 Golang
+keywords: Golang, 下载, 安装
+top_img: /images/golang/GolangCover4.png
+cover: /images/golang/GolangCover4.png
+---
+
+## 安装 Go
+
+### 下载 Golang
+
+* 下载地址 [https://golang.google.cn/dl/](https://golang.google.cn/dl/)
+* 当前版本 go1.16.5
+
+### 设置 Go Module
+
+* 查看 Go 环境变量
+  ```bash
+  go env
+  ```
+* 设置 GO PROXY
+  ```bash
+  go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+  ```
+* 安装 Go 文档
+  ```bash
+  go get golang.org/x/tools/cmd/godoc
+  ```
