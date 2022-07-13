@@ -11,5 +11,4 @@ tags:
   - {{ tag }}
 categories:
   - {{ category }} 
-swiper_index: 置顶轮播图顺序，数字越大越靠前，type:integer
 ---

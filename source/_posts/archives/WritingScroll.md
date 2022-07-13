@@ -11,7 +11,6 @@ categories:
   - Archives
 date: 2022-07-03 16:56:44
 updated: 2022-07-06 15:06:44
-swiper_index: 2
 ---
 
 > 仅适用于本博客，若要原封不用的使用，请参考[建站宝典](/archives/BuildingScroll)

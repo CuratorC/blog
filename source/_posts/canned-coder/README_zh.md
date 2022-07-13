@@ -5,7 +5,6 @@ tags:
   - 入门
 categories:
   - canned-coder
-swiper_index: 5
 date: 2021-08-13 10:14:55
 updated: 2022-07-06 16:14:14
 description: 将你从流水线式的编程中解放出来
